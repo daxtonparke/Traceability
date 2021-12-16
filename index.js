@@ -17,6 +17,11 @@ let students = []
 //     newfunction()
 // }).catch(err => console.log(err))
 
+app.get('/', (req, res)=> {
+    res.sendFile(path.join(__dirname, '/public/styles.css'))
+
+})
+
 app.get('/', (req,res)=> {
     res.sendFile(path.join(__dirname, '/public/index.html'))
     rollbar.info('html file served successfully.')
