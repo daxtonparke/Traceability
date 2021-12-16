@@ -13,9 +13,9 @@ var rollbar = new Rollbar({
 
 let students = []
 
-app.get('/', (req, res)=> {
-    newfunction()
-}).catch(err => console.log(err))
+// app.get('/', (req, res)=> {
+//     newfunction()
+// }).catch(err => console.log(err))
 
 app.get('/', (req,res)=> {
     res.sendFile(path.join(__dirname, '/public/index.html'))
