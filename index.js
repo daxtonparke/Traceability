@@ -17,16 +17,15 @@ let students = []
 //     newfunction()
 // }).catch(err => console.log(err))
 
-app.get('/css', (req, res)=> {
-    res.sendFile(path.join(__dirname, '/public/styles.css'))
-
-})
 
 app.get('/', (req,res)=> {
     res.sendFile(path.join(__dirname, '/public/index.html'))
     rollbar.info('html file served successfully.')
 })
 
+app.get('/css', (req, res)=> {
+    res.sendFile(path.join(__dirname, './styles.css'))
+})
 
 app.use(rollbar.errorHandler())
 const port = process.env.PORT || 4004
