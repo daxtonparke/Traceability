@@ -23,9 +23,9 @@ app.get('/', (req,res)=> {
     rollbar.info('html file served successfully.')
 })
 
-app.get('/css', (req, res)=> {
-    res.sendFile(path.join(__dirname, './styles.css'))
-})
+// app.get('/css', (req, res)=> {
+//     res.sendFile(path.join(__dirname, '/public/styles.css'))
+// })
 
 app.use(rollbar.errorHandler())
 const port = process.env.PORT || 4004
