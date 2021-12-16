@@ -11,12 +11,15 @@ var rollbar = new Rollbar({
   captureUnhandledRejections: true
 });
 
+let students = []
+
 app.get('/', (req,res)=> {
     res.sendFile(path.join(__dirname, '/public/index.html'))
     rollbar.info('html file served successfully.')
 })
 
 
+app.use(rollbar.errorHandler())
 const port = process.env.PORT || 4004
 
 app.listen(port, () => console.log(`welcome to floor ${port}`))
